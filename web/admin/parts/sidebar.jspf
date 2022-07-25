@@ -1,0 +1,55 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<style>
+    .app-sidebar__user-name,.app-sidebar__user-designation{
+        color: white;
+    }
+    .app-sidebar__user-avatar{
+        width: 100%;
+    }
+</style>
+<div id="preloader">
+    <img class="logo" src="<%=request.getContextPath()%>/assets/images/logo/logo.png" alt="">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<%=request.getContextPath()%>/assets/images/account/${sessionScope.ADMIN.getImage()}"
+                                        alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name"><b>${sessionScope.ADMIN.getFullname()}</b></p>
+            <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+        </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+        <li><a class="app-menu__item <%=request.getServletPath().contains("dashboard") ? "active" : ""%>" href="<%=request.getContextPath()%>/admin/dashboard"><i
+                    class='app-menu__icon bx bx-tachometer'></i><span
+                    class="app-menu__label">Bảng điều khiển</span></a></li>
+        <li><a class="app-menu__item " href=""><i
+        <li><a class="app-menu__item <%=request.getServletPath().contains("user") ? "active" : ""%>" href="<%=request.getContextPath()%>/admin/user"><i class='app-menu__icon bx bx-user-voice'></i><span
+                    class="app-menu__label">Quản lý khách hàng<br>nhân viên</span></a></li>
+        <li><a class="app-menu__item <%=request.getServletPath().contains("brand") ? "active" : ""%>" href="<%=request.getContextPath()%>/admin/brand"><i class='app-menu__icon bx bx-box'></i><span
+                    class="app-menu__label">Quản lý thương hiệu</span></a></li>
+        <li><a class="app-menu__item <%=request.getServletPath().contains("category") ? "active" : ""%>" href="<%=request.getContextPath()%>/admin/category">
+                <i class='app-menu__icon bx bxs-category'></i>
+                <span
+                    class="app-menu__label">Quản lý thể loại
+                </span></a></li>
+        <li><a class="app-menu__item <%=request.getServletPath().contains("product") ? "active" : ""%>" href="<%=request.getContextPath()%>/admin/product"><i
+                    class='app-menu__icon bx bx-list-ul'></i><span
+                    class="app-menu__label">Quản lý sản phẩm</span></a></li>
+        </li>
+         <li><a class="app-menu__item"
+               href="<%=request.getContextPath()%>/account"><i class='app-menu__icon bx bx-user'></i><span
+                    class="app-menu__label">Cập nhật thông tin<br> cá nhân</span></a></li>
+        <li><a class="app-menu__item" href="<%= request.getContextPath()%>/home"><i
+                    class='app-menu__icon bx bx-home'></i><span class="app-menu__label">Quay lại trang chủ</span></a>
+
+        </li>
+    </ul>
+</aside>

@@ -1,0 +1,112 @@
+/*-------- 24. Login register style ---------*/
+.login-register-wrapper {
+  .login-register-tab-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    @media #{$xs-layout} {
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 25px;
+
+      color: red;
+      margin: 0 20px;
+      text-transform: capitalize;
+      font-weight: 700;
+      transition: all 0.3s ease 0s;
+    }
+  }
+  .login-form-container {
+    background: transparent none repeat scroll 0 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    @media #{$lg-layout} {
+      padding: 20px 50px;
+    }
+    @media #{$xs-layout} {
+      padding: 20px 15px;
+    }
+    p {
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: 700;
+      transition: all 0.3s ease 0s;
+    }
+    .login-register-form {
+      form {
+        input, select {
+          background-color: transparent;
+          border: 1px solid #ebebeb;
+          font-size: 14px;
+          height: 50px;
+          margin-top: 20px;
+          padding: 0 15px;
+          color: #010225;
+        }
+        input[type="checkbox"] {
+          height: 15px;
+          margin: 0;
+          position: relative;
+          top: 2px;
+          width: 17px;
+          color: #010225;
+        }
+        .error {
+          border-radius: 5px;
+          font-weight: 700;
+          color: red;
+        }
+        .button-box {
+          .login-toggle-btn {
+            padding: 10px 0 19px;
+            label {
+              font-size: 15px;
+              font-weight: 400;
+              @media #{$xs-layout} {
+                font-size: 14px;
+              }
+            }
+            a {
+              float: right;
+              font-size: 15px;
+              color: #010225;
+              @media #{$xs-layout} {
+                font-size: 14px;
+              }
+              transition: all 0.3s ease 0s;
+              &:hover {
+                color: $theme-color-red;
+              }
+            }
+          }
+          button {
+            background-color: $theme-color-red;
+            color: #fff;
+            border: medium none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            margin-top: 20px;
+            padding: 13px 30px 13px;
+            text-transform: uppercase;
+            transition: all 0.3s ease 0s;
+            &:hover {
+              background-color: #010225;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.login-register-area {
+  @media #{$xs-layout} {
+    &.pb-100 {
+      padding-bottom: 60px;
+    }
+  }
+}

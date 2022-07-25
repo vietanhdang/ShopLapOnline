@@ -1,0 +1,108 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Main CSS-->
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/admin/css/main.css">
+<link rel="shortcut icon" type="image/x-icon" href="<%=request.getContextPath()%>/assets/images/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<!-- or -->
+<!--<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">-->
+<!-- Font-icon css-->
+<link rel="stylesheet" type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="<%=request.getContextPath()%>/admin/js/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<style>
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f8f9fa;
+        /* change if the mask should have another color then white */
+        z-index: 99999;
+        text-align: center;
+        /* makes sure it stays on top */
+    }
+
+    #preloader img {
+        margin-top: 100px;
+    }
+
+    @media (max-width: 767px) {
+        #preloader img {
+            margin-bottom: 50px;
+        }
+    }
+
+    #status {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        top: 35%;
+        margin: 0 auto;
+        right: 35px;
+    }
+
+    #status span {
+        position: absolute;
+        border-radius: 999px;
+    }
+
+    #status span:nth-child(1) {
+        border: 5px solid #dcf836;
+        border-top: 5px solid transparent;
+        width: 70px;
+        height: 70px;
+        animation: spin1 2s infinite linear;
+    }
+
+    #status span:nth-child(2) {
+        border: 5px solid #dd003f;
+        border-top: 5px solid transparent;
+        top: 20px;
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        animation: spin2 1s infinite linear;
+        margin-left: 35px;
+    }
+
+    @keyframes spin1 {
+        0% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+
+        50% {
+            transform: rotate(180deg);
+            opacity: 0.75;
+        }
+
+        100% {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    @keyframes spin2 {
+        0% {
+            transform: rotate(0deg);
+            opacity: 0.75;
+        }
+
+        50% {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: rotate(360deg);
+            opacity: 0.75;
+        }
+    }
+</style>

@@ -1,0 +1,46 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<!-- Sidebar menu-->
+<style>
+    .app-sidebar__user-name,.app-sidebar__user-designation{
+        color: white;
+    }
+    .app-sidebar__user-avatar{
+        width: 100%;
+    }
+</style>
+<div id="preloader">
+    <img class="logo" src="<%=request.getContextPath()%>/assets/images/logo/logo.png" alt="">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+                                        src="<%=request.getContextPath()%>/assets/images/account/${sessionScope.SALE.getImage()}"
+                                        
+                                        alt="User Image">
+        <div>
+            <p class="app-sidebar__user-name"><b>${sessionScope.SALE.getFullname()}</b></p>
+            <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+        </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+        <li><a class="app-menu__item <%=request.getServletPath().contains("dashboard") ? "active" : ""%>"
+               href="<%=request.getContextPath()%>/sale/dashboard"><i
+                    class='app-menu__icon bx bx-tachometer'></i><span
+                    class="app-menu__label">Bảng điều khiển</span></a></li>
+        <li><a class="app-menu__item <%=request.getServletPath().contains("orders") ? "active" : ""%>"
+               href="<%=request.getContextPath()%>/sale/orders"><i class='app-menu__icon bx bx-calendar-check'></i><span
+                    class="app-menu__label">Quản lý đơn hàng</span></a></li>
+        <li><a class="app-menu__item"
+               href="<%=request.getContextPath()%>/account"><i class='app-menu__icon bx bx-user'></i><span
+                    class="app-menu__label">Cập nhật thông tin<br> cá nhân</span></a></li>
+        <li><a class="app-menu__item" href="<%= request.getContextPath()%>/home"><i
+                    class='app-menu__icon bx bx-home'></i><span class="app-menu__label">Quay lại trang chủ</span></a>
+        </li>
+    </ul>
+</aside>
